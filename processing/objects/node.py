@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Base
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 
 @dataclass
@@ -11,3 +11,5 @@ class Node:
 
     lat: float
     lon: float
+
+    tags: dict[str] = field(default_factory=list)
