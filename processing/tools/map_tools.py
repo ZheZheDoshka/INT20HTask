@@ -4,13 +4,13 @@
 # Base
 
 # Internal
-from processing.objects.node import Node
+from processing.objects import Node
 
 # External
 from OSMPythonTools.api import ApiResult
 
 
-class NodeTools:
+class MapTools:
     @staticmethod
     def node_from_api(api_result: ApiResult) -> Node:
         node = Node(
