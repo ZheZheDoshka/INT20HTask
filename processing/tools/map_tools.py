@@ -4,7 +4,7 @@
 # Base
 
 # Internal
-from processing.objects import Node
+from processing.objects import Node, Way
 
 # External
 from OSMPythonTools.api import ApiResult
@@ -20,3 +20,14 @@ class MapTools:
         )
 
         return node
+
+    @staticmethod
+    def way_from_api(api_result: ApiResult) -> Way:
+        nodes = [MapTools.node_from_api(node) for node in api_result.nodes()]
+
+        way = Way(
+            id=api_result.id(),
+            nodes=nodes,
+        )
+
+        return way
