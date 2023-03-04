@@ -1,5 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from node import Node
-from way import Way
+from processing.objects.node import Node
+from processing.objects.way import Way
