@@ -1,2 +1,10 @@
+# Demonstration
 jupyter
+
+# Data analysis
+numpy
 pandas
+
+# Map
+OSMPythonTools
+overpy
