@@ -64,3 +64,11 @@ class MapTools:
     @staticmethod
     def distance(node1: Node, node2: Node, units='km', r=EARTH_RADIUS):
         return MapTools.distance_bulk([node1], [node2], units=units, r=r)[0]
+
+    @staticmethod
+    def distance_way(way: Way, units='km', r=EARTH_RADIUS):
+        nodes = []
+        for node in range(len(way.nodes) - 1):
+            nodes.append([way.nodes[node], way.nodes[node + 1]])
+
+        return np.sum(MapTools.distance_bulk(nodes, units=units, r=r))
